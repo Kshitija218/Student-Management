@@ -43,6 +43,12 @@ public class StudentController {
 		
 	}
 	
-	
+	private StudentBean entityToBean(Student student){
+		StudentBean studBean = new StudentBean();
+		studBean.setStudId(student.getStudId());
+		studBean.setStudName(student.getStudName());
+		return studBean;
+		
+	}
 	
 }
