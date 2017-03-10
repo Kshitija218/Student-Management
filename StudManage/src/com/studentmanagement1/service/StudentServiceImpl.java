@@ -1,39 +1,43 @@
-package com.studentmanagement1.dao;
+/**
+ * 
+ */
+package com.studentmanagement1.service;
 
 import java.util.List;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.studentmanagement1.dao.StudentDao;
 import com.studentmanagement1.model.Student;
 
-public class StudentDaoImpl implements StudentDao{
+/**
+ * @author Kshitija
+ *
+ */
+public class StudentServiceImpl implements StudentService{
 
 	@Autowired
-	SessionFactory sessionfactory;
+	StudentDao studentdao;
 	@Override
 	public void addStudent(Student student) {
-
-	sessionfactory.getCurrentSession().save(student);
 		
+		studentdao.addStudent(student);
 	}
 
 	@Override
 	public Student getStudent() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public void deleteStudent(Student student) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public List<Student> listOfStudent() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

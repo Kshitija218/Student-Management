@@ -4,6 +4,7 @@ public class StudentBean {
 
 	private int studId;
 	private String studName;
+	
 	public int getStudId() {
 		return studId;
 	}
