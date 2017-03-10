@@ -12,7 +12,7 @@
 		pass:     <input type="password" name="userpass"></br> 
 		Email:    <input type="text" name="email"><br> 
 		mobile:   <input type="text" name="mob"></br>
-		<input type="submit" value="register"></br>
+		<input type="submit" value="register"></br>swapmil
 		
 </form>
 </body>
