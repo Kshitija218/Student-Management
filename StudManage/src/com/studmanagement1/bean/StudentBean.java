@@ -1,4 +1,4 @@
-package com.studmanage.bean;
+package com.studmanagement1.bean;
 
 public class StudentBean {
 

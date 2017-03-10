@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.studentmanagement1.model.Student;
 import com.studentmanagement1.service.StudentService;
-import com.studmanage.bean.StudentBean;
+import com.studmanagement1.bean.StudentBean;
 
 /**
  * @author Kshitija
