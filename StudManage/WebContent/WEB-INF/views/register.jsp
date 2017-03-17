@@ -35,20 +35,17 @@
 <form:form action="${addAction}" modelAttribute="student">
 
 <table>
-	<c:if test="${!empty student.name}">
-	<tr>
-		<td>ID</td>
-		<td><input type="text" name="id" value="${student.id}"/></td>
-	</tr>
+	<%-- <c:if test="${!empty student.name}"> --%>
+	
 	
 	<tr>
 		<td>ID</td>
-		<td><input type="text" name="id" value="${student.studId}"/></td>
+		<td><input type="text" name="studId" value="${student.studId}"/></td>
 	</tr>
-	</c:if>
+	<%-- </c:if> --%>
 	<tr>
 		<td>Name</td>
-		<td><input type="text" name="name" value="${student.studName}"/></td>
+		<td><input type="text" name="studName" value="${student.studName}"/></td>
 	</tr>
 	<tr>
 	<td colspan="2">
