@@ -15,7 +15,7 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/WebContent/**" location="/WebContent/META-INF/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->
@@ -57,8 +57,7 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.studentmanagement1.model.student</beans:value>
-				<!-- <beans:value>com.journaldev.spring.model.Address</beans:value> -->
+				<beans:value>com.studentmanagement1.model.Student</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -92,14 +91,16 @@
 	</bean>
  -->
  
+ <context:property-placeholder location="classpath:resources/database.properties" />
  
- <beans:bean id="StudentDao" class="com.studentmanagement1.StudentDaoImpl">
+ 
+ 	<!-- <beans:bean id="StudentDao" class="com.studentmanagement1.dao.StudentDaoImpl">
 		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
-	<beans:bean id="StudentService" class="com.studentmanagement.StudentServiceImpl">
-		<beans:property name="StudentDao" ref="StudentDao"></beans:property>
-	</beans:bean>
-	<context:component-scan base-package="com.studentmanagement1.controller" />
+	</beans:bean> -->
+	<!-- <beans:bean id="StudentService" class="com.studentmanagement1.service.StudentServiceImpl">
+		<beans:property name="studentdao" ref="StudentDao"></beans:property>
+	</beans:bean> -->
+	<context:component-scan base-package="com.studentmanagement1" />
 	
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 	

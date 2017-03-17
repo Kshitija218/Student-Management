@@ -6,6 +6,7 @@ package com.studentmanagement1.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,7 +24,10 @@ import com.studmanagement1.bean.StudentBean;
 public class StudentController {
 
 	@Autowired
-	private StudentService service;
+	public StudentService service;
+
+	
+	
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ModelAndView saveStudent(StudentBean studentBean, BindingResult result){
@@ -33,6 +37,18 @@ public class StudentController {
 		return null;
 		
 	}
+	
+	
+	@RequestMapping(value= "/student/add", method = RequestMethod.POST)
+	public void addPerson(@ModelAttribute("student") Student student){
+		
+			service.addStudent(student);
+		
+			System.out.println("you have successfully sign-up........");		
+	}
+	
+	
+	
 
 	private Student beanTOEntity(StudentBean studentBean) {
 

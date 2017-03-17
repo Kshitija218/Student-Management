@@ -1,19 +1,61 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+	<title>student Page</title>
+	<style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+		.tg .tg-4eph{background-color:#f9f9f9}
+	</style>
 </head>
 <body>
-<form action= method=post>
-		user Name:<input type="text" name="username"></br> 
-		pass:     <input type="password" name="userpass"></br> 
-		Email:    <input type="text" name="email"><br> 
-		mobile:   <input type="text" name="mob"></br>
-		<input type="submit" value="register"></br>swapmil
-		
-</form>
+<h1>
+	student registration
+</h1>
+
+
+
+<%-- <form:form action="abc" commandName="studentdata">
+<form:input path="id"/><br/>
+<form:input path="name"/><br/>
+<form:input path="country"/><br/>
+</form:form>
+ --%>
+<br/>
+<br/>
+<br/>
+
+
+<c:url var="addAction" value="/student/add" ></c:url>
+
+<form:form action="${addAction}" modelAttribute="student">
+
+<table>
+	<c:if test="${!empty student.name}">
+	<tr>
+		<td>ID</td>
+		<td><input type="text" name="id" value="${student.id}"/></td>
+	</tr>
+	
+	<tr>
+		<td>ID</td>
+		<td><input type="text" name="id" value="${student.studId}"/></td>
+	</tr>
+	</c:if>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" name="name" value="${student.studName}"/></td>
+	</tr>
+	<tr>
+	<td colspan="2">
+	<input type="submit" value= "<spring:message text="sign-up"/>" />
+	
+</table>	
+</form:form>
+
 </body>
 </html>

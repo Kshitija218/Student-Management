@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  */
 @Entity
-@Table(name="Student")
+@Table(name="Student1")
 public class Student {
 	
 	@Id
@@ -26,6 +26,10 @@ public class Student {
 	
 	@Column(name="studname")
 	private String studName;
+	
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	public int getStudId() {
