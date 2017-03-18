@@ -30,6 +30,6 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/views/register.jsp</welcome-file>
+		<welcome-file>/WEB-INF/views/registeration.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

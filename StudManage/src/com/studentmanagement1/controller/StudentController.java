@@ -26,7 +26,10 @@ public class StudentController {
 	@Autowired
 	public StudentService service;
 
-	
+	@RequestMapping(value = "registration", method = RequestMethod.GET)
+	public String addStudents() {
+		return "/WEB-INF/views/registeration.jsp";
+	}
 	
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
@@ -40,7 +43,7 @@ public class StudentController {
 	
 	
 	@RequestMapping(value= "/student/add", method = RequestMethod.POST)
-	public void addPerson(@ModelAttribute("student") Student student){
+	public void addStudent(@ModelAttribute("student") Student student){
 		
 			service.addStudent(student);
 		

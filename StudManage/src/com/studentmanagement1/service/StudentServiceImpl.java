@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.studentmanagement1.dao.StudentDao;
 import com.studentmanagement1.model.Student;
+import com.studmanagement1.bean.LoginBean;
 
 /**
  * @author Kshitija
@@ -48,6 +49,16 @@ public class StudentServiceImpl implements StudentService{
 	public List<Student> listOfStudent() {
 		return null;
 	}
+
+	@Override
+	public Student validateStudent(LoginBean login) {
+		
+		
+		
+		return studentdao.validateStudent(login);
+	}
+
+	
 
 	
 }
